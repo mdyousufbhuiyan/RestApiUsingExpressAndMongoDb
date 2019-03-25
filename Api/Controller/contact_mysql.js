@@ -51,9 +51,13 @@ const updtaContact = (req, res, next) => {
 }
 const updtaParticularContact = (req, res, next) => {
     let id = req.params.id;
+
+    let name = req.query.name;
+    let phone = req.query.phone;
+
     var contact = {
-        name: req.body.name
-        //phone: req.body.phone
+        name,
+        phone
     }
 
     let updateQuery = `Update contact SET ? Where ID= ${id}`
